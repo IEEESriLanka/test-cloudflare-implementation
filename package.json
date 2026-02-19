@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
-    "@opennextjs/cloudflare": "^0.5.5",
+    "@opennextjs/cloudflare": "^1.16.4",
     "@payloadcms/db-postgres": "3.73.0",
     "@payloadcms/next": "3.73.0",
     "@payloadcms/plugin-cloud-storage": "^3.73.0",
