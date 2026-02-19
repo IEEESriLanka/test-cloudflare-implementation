@@ -1,21 +1,22 @@
 
-const config = {
+import type { OpenNextConfig } from "@opennextjs/aws/types/open-next.js";
+
+const config: OpenNextConfig = {
   default: {
-    buildCommand: "npm run build:native",
+    override: {
+      wrapper: "cloudflare-node",
+      converter: "edge",
+      proxyExternalRequest: "fetch",
+    },
   },
-  commands: {
-    build: {
-      // This is passed to the build function. 
-      // We need to define buildCommand inside 'default' usually, 
-      // but let's check standard OpenNext config structure. 
-      // Based on docs, it's usually:
-      // export default { default: { ... } };
-    }
-  }
+  middleware: {
+    external: true,
+    override: {
+      wrapper: "cloudflare-edge",
+      converter: "edge",
+      proxyExternalRequest: "fetch",
+    },
+  },
 };
 
-export default {
-  default: {
-    buildCommand: "npm run build:native",
-  },
-};
+export default config;
